@@ -9,3 +9,9 @@ terraform {
     }
   }
 }
+
+provider "google" {
+  project = "kkgcplabs01-025"
+  region  = "asia-south1"
+  zone    = "asia-south1-a"
+}

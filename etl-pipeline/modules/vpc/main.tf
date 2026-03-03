@@ -4,9 +4,7 @@ resource "google_compute_network" "vpc_network" {
   project                 = var.project_id
   routing_mode            = var.routing_mode
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 resource "google_compute_subnetwork" "public_subnet_1" {
@@ -16,9 +14,7 @@ resource "google_compute_subnetwork" "public_subnet_1" {
   network                  = google_compute_network.vpc_network.id
   private_ip_google_access = true   # allows VMs to reach Google APIs without public IPs
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 resource "google_compute_subnetwork" "private_subnet_1" {
@@ -29,9 +25,7 @@ resource "google_compute_subnetwork" "private_subnet_1" {
   private_ip_google_access = true
   purpose = "PRIVATE"
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 resource "google_compute_subnetwork" "public_subnet_2" {
@@ -41,9 +35,7 @@ resource "google_compute_subnetwork" "public_subnet_2" {
   network                  = google_compute_network.vpc_network.id
   private_ip_google_access = true   # allows VMs to reach Google APIs without public IPs
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 resource "google_compute_subnetwork" "private_subnet_2" {
@@ -54,9 +46,7 @@ resource "google_compute_subnetwork" "private_subnet_2" {
   private_ip_google_access = true
   purpose = "PRIVATE"
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 
@@ -69,9 +59,7 @@ resource "google_compute_router" "router" {
     asn = var.router_asn   # private ASN range: 64512–65534
   }
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 resource "google_dns_policy" "private_dns" {
@@ -83,7 +71,5 @@ resource "google_dns_policy" "private_dns" {
     network_url = google_compute_network.vpc_network.id
   }
 
-    labels = {
-    env     = "dev"
-  }
+
 }

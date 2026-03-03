@@ -10,9 +10,7 @@ resource "google_compute_firewall" "allow_ssh" {
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["ssh-access"]
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 
@@ -46,7 +44,5 @@ resource "google_compute_firewall" "allow_https_egress" {
 
   destination_ranges = ["0.0.0.0/0"]
 
-    labels = {
-    env     = "dev"
-  }
+
 }

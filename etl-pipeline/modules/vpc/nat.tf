@@ -10,9 +10,7 @@ resource "google_compute_router_nat" "nat" {
     filter = "ERRORS_ONLY"
   }
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 resource "google_compute_router" "router_delhi" {
@@ -24,9 +22,7 @@ resource "google_compute_router" "router_delhi" {
     asn = var.router_asn
   }
 
-    labels = {
-    env     = "dev"
-  }
+
 }
 
 resource "google_compute_router_nat" "nat_delhi" {
@@ -41,7 +37,5 @@ resource "google_compute_router_nat" "nat_delhi" {
     filter = "ERRORS_ONLY"
   }
 
-    labels = {
-    env     = "dev"
-  }
+
 }

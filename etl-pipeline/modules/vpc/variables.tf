@@ -7,7 +7,8 @@ variable "vpc_name" {
 variable "project_id" {
   description = "Project ID for the VPC network"
   type        = string
-  default     = "flipkart-dev-project"
+#   default     = "flipkart-dev-project"
+  default     = "kkgcplabs01-025"
 }
 
 variable "routing_mode" {
