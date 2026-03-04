@@ -8,7 +8,7 @@ variable "project_id" {
   description = "Project ID for the VPC network"
   type        = string
 #   default     = "flipkart-dev-project"
-  default     = "kkgcplabs01-025"
+  default     = "ginthi-entrans"
 }
 
 variable "routing_mode" {
