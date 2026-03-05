@@ -2,11 +2,12 @@ resource "google_compute_instance" "vm" {
   name         = "etl-vm"
   machine_type = "e2-micro"
   zone         = var.zone
+  project      = var.project_id
 
   boot_disk {
     initialize_params {
       image = "ubuntu-os-cloud/ubuntu-2204-lts"
-      size  = 20
+      size  = 32
     }
   }
 
